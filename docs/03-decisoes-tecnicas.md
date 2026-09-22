@@ -28,6 +28,10 @@ Este documento registra as decisões de arquitetura relevantes no formato *Archi
 
 **Decisão.** Coexistência, para qualquer número já em uso ativo por clientes.
 
+<p align="center">
+  <img src="../assets/decision-tree.png" alt="Árvore de decisão: número novo vs número já em produção" width="90%">
+</p>
+
 **Consequências.** Essa decisão foi tomada **depois** de um incidente em que a migração completa foi tentada num número em produção, causando indisponibilidade total do canal de atendimento por um período (documentado em `06-licoes-aprendidas.md`). O trade-off aceito é: maior complexidade de configuração e maior número de comportamentos não-documentados pela Meta (ver `05-descobertas-coexistencia-whatsapp.md`), em troca de eliminar o risco de indisponibilidade do canal durante a transição. Para números novos, sem uso prévio, a migração completa continua sendo a opção mais simples e recomendada — a coexistência só se justifica quando há continuidade de atendimento a preservar.
 
 ---

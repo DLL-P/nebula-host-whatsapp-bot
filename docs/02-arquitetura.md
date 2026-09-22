@@ -1,5 +1,9 @@
 # 2. Arquitetura
 
+<p align="center">
+  <img src="../assets/arch-flow.png" alt="Fluxo simplificado de mensagem, do cliente até o atendimento humano" width="100%">
+</p>
+
 ## 2.1 Visão geral dos componentes
 
 ```mermaid
