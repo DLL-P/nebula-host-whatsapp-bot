@@ -17,6 +17,7 @@ Essa segmentação é o primeiro ponto de decisão em qualquer implantação par
 
 Uma implantação completa, independentemente da complexidade, cobre as seguintes etapas (detalhadas operacionalmente em material interno, fora do escopo deste repositório público):
 
+0. Briefing inicial com o cliente, incluindo uma estimativa de **volume mensal esperado de mensagens** — esse dado alimenta diretamente o dimensionamento do custo operacional descrito na Seção 7.5, e não apenas a segmentação de risco da Seção 7.2;
 1. Verificação de identidade de conta e portfólio empresarial na plataforma Meta;
 2. Criação e configuração do aplicativo de desenvolvedor;
 3. Registro do número (fluxo direto ou coexistência, conforme segmentação da Seção 7.2);
@@ -36,15 +37,23 @@ A experiência de implantação sugere dois componentes de precificação distin
 
 ## 7.5 Custo de inferência de IA: operacional, não repassado
 
-O custo por chamada ao modelo de linguagem usado na classificação de intenção é, na prática, desprezível frente ao valor cobrado pelos dois componentes descritos na Seção 7.4. Para uma tarefa de classificação curta (prompt de sistema pequeno, mensagem curta do cliente, saída estruturada), o custo por mensagem processada fica na casa de frações de centavo — mesmo em um volume mensal elevado para o porte de negócio-alvo (milhares de mensagens/mês), o custo total de inferência representa uma fração pequena de um único mês de manutenção recorrente (Seção 7.4).
+O custo por chamada ao modelo de linguagem usado na classificação de intenção é, na prática, desprezível frente ao valor cobrado pelos dois componentes descritos na Seção 7.4. Para uma tarefa de classificação curta (prompt de sistema pequeno, mensagem curta do cliente, saída estruturada), o custo por mensagem processada fica na casa de frações de centavo:
 
-Por esse motivo, a estrutura de custo adotada é de **posse única da credencial de acesso ao provedor de IA**, do lado do prestador de serviço, com o custo de inferência absorvido como parte do custo operacional do serviço — não repassado como linha de cobrança separada ao cliente final, que não possui nem precisa possuir uma conta própria junto ao provedor de IA. Esse desenho:
+| Volume mensal de mensagens | Custo estimado de inferência |
+|---|---|
+| Baixo (centenas/mês) | Marginal, abaixo de qualquer componente de precificação |
+| Médio (poucos milhares/mês) | Ainda pequena fração de um único mês de manutenção recorrente (Seção 7.4) |
+| Alto (dezenas de milhares/mês, incomum para o porte de negócio-alvo) | Continua sendo uma fração pequena do valor recorrente cobrado |
 
-- Simplifica a experiência do cliente (nenhuma etapa de configuração de conta ou billing de terceiros);
-- Evita a complexidade de engenharia de medir e faturar uso por cliente individualmente, cujo custo de implementação superaria a economia gerada, dado o valor baixo envolvido;
+Mesmo no cenário de volume alto, o custo total de inferência não se aproxima da ordem de grandeza do valor cobrado pelos componentes da Seção 7.4 — é essa margem folgada que sustenta o modelo de precificação fixa descrito a seguir.
+
+Por esse motivo, a estrutura de custo adotada é de **posse única da credencial de acesso ao provedor de IA**, do lado do prestador de serviço, com o custo de inferência absorvido como parte do custo operacional do serviço — não repassado ao cliente final como uma linha de cobrança variável medida por uso real. Isso não significa que o volume é ignorado na precificação: a estimativa de volume mensal levantada no briefing inicial (etapa 0 da Seção 7.3) é usada para calcular, antecipadamente, um custo operacional de IA esperado para aquele cliente específico, que é então **embutido no valor fixo** da proposta (implantação e/ou manutenção recorrente) — o cliente nunca vê essa linha separadamente, nem precisa possuir conta própria junto ao provedor de IA, mas o prestador de serviço precifica com base nela. Esse desenho:
+
+- Simplifica a experiência do cliente (nenhuma etapa de configuração de conta ou billing de terceiros, nenhuma cobrança variável surpresa);
+- Evita a complexidade de engenharia de medir e faturar uso por cliente em tempo real, substituindo isso por uma estimativa feita uma vez, no briefing, e refletida no preço fixo;
 - É consistente com o tratamento de outros custos operacionais de infraestrutura (hospedagem) já embutidos no componente de manutenção recorrente.
 
-Uma cláusula contratual de uso justo (um teto de volume mensal razoável, acima do qual a relação comercial é revisitada) é suficiente como proteção contra outliers, sem exigir infraestrutura de medição dedicada.
+Como o custo por mensagem é baixo mesmo em cenários de volume alto (ver tabela acima), o risco de a estimativa de briefing subdimensionar significativamente o custo real é baixo. Uma cláusula contratual de uso justo (um teto de volume mensal, com base na estimativa levantada no briefing, acima do qual a relação comercial é revisitada) permanece como proteção adicional contra desvios grandes em relação ao estimado, sem exigir infraestrutura de medição dedicada.
 
 ## 7.6 Generalização para outros domínios de aplicação
 
