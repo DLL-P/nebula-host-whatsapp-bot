@@ -34,6 +34,18 @@ A experiência de implantação sugere dois componentes de precificação distin
 
 **Manutenção e disponibilidade (recorrente).** Distinta da implantação, a manutenção recorrente tem seu valor ancorado na garantia de que degradações da camada de automação (Seção 5.4 — desconexões temporárias da API que não afetam o canal humano, mas afetam a automação) sejam identificadas e comunicadas antes que o cliente perceba um problema, e não depois. Esse componente de serviço se aproxima, em estrutura, de um serviço de monitoramento de disponibilidade — o produto entregue não é "o bot funcionando hoje", é "alguém identifica um problema antes de você".
 
-## 7.5 Generalização para outros domínios de aplicação
+## 7.5 Custo de inferência de IA: operacional, não repassado
+
+O custo por chamada ao modelo de linguagem usado na classificação de intenção é, na prática, desprezível frente ao valor cobrado pelos dois componentes descritos na Seção 7.4. Para uma tarefa de classificação curta (prompt de sistema pequeno, mensagem curta do cliente, saída estruturada), o custo por mensagem processada fica na casa de frações de centavo — mesmo em um volume mensal elevado para o porte de negócio-alvo (milhares de mensagens/mês), o custo total de inferência representa uma fração pequena de um único mês de manutenção recorrente (Seção 7.4).
+
+Por esse motivo, a estrutura de custo adotada é de **posse única da credencial de acesso ao provedor de IA**, do lado do prestador de serviço, com o custo de inferência absorvido como parte do custo operacional do serviço — não repassado como linha de cobrança separada ao cliente final, que não possui nem precisa possuir uma conta própria junto ao provedor de IA. Esse desenho:
+
+- Simplifica a experiência do cliente (nenhuma etapa de configuração de conta ou billing de terceiros);
+- Evita a complexidade de engenharia de medir e faturar uso por cliente individualmente, cujo custo de implementação superaria a economia gerada, dado o valor baixo envolvido;
+- É consistente com o tratamento de outros custos operacionais de infraestrutura (hospedagem) já embutidos no componente de manutenção recorrente.
+
+Uma cláusula contratual de uso justo (um teto de volume mensal razoável, acima do qual a relação comercial é revisitada) é suficiente como proteção contra outliers, sem exigir infraestrutura de medição dedicada.
+
+## 7.6 Generalização para outros domínios de aplicação
 
 Embora este material tenha sido produzido no contexto de uma prestadora de serviços de TI, a estrutura de risco descrita (canal de atendimento já em produção; automação de triagem sem substituir julgamento humano em casos complexos; necessidade de coexistência para não interromper atendimento durante a transição) generaliza para qualquer pequena ou média empresa cujo canal primário de atendimento ao cliente seja o WhatsApp — o que, no contexto de mercado descrito na Seção 1.3, é a maioria delas.
