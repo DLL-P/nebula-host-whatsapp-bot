@@ -73,6 +73,14 @@ Detalhada como ADR-002 em [`docs/03-decisoes-tecnicas.md`](docs/03-decisoes-tecn
 | [`05-descobertas-coexistencia-whatsapp.md`](docs/05-descobertas-coexistencia-whatsapp.md) | Os 4 achados empíricos, com comandos reproduzíveis |
 | [`06-licoes-aprendidas.md`](docs/06-licoes-aprendidas.md) | Catálogo de obstáculos operacionais reais e suas mitigações |
 | [`07-modelo-de-servico.md`](docs/07-modelo-de-servico.md) | Como essa experiência virou um serviço replicável para terceiros |
+| [`08-habilitacao-e-producao.md`](docs/08-habilitacao-e-producao.md) | Runbook: destravar a Cloud API (Tech Provider, coexistência, número novo), deploy na VPS e go-live |
+
+## 🧰 Ferramentas
+
+| Caminho | Conteúdo |
+|---|---|
+| [`scripts/diagnostico-whatsapp.sh`](scripts/diagnostico-whatsapp.sh) | Diagnóstico somente-leitura da conta na Graph API: token, WABA, inscrição, status do número, templates |
+| [`deploy/`](deploy/) | Docker Compose de produção: Chatwoot + Postgres (pgvector) + Redis + Caddy (HTTPS) |
 
 ## ✅ Por que Cloud API oficial, não bibliotecas não-oficiais
 
@@ -87,7 +95,7 @@ Racional completo: ADR-001 em [`03-decisoes-tecnicas.md`](docs/03-decisoes-tecni
 
 ## Escopo e limitações deste repositório
 
-Este repositório contém **apenas documentação** — arquitetura, decisões, metodologia e achados técnicos. O código-fonte da implementação (webhook, integração com Chatwoot, testes de disponibilidade) é proprietário e não está incluído. Identificadores reais de conta (números de telefone, IDs de WhatsApp Business Account, tokens de acesso, endereços) foram removidos ou substituídos por placeholders em todos os exemplos — nenhuma credencial ou dado de cliente real aparece neste material.
+Este repositório contém documentação, um script de diagnóstico e os templates de infraestrutura. O código-fonte da implementação (webhook, integração com Chatwoot, testes de disponibilidade) é proprietário e não está incluído. Identificadores reais de conta (números de telefone, IDs de WhatsApp Business Account, tokens de acesso, endereços) foram removidos ou substituídos por placeholders em todos os exemplos — nenhuma credencial ou dado de cliente real aparece neste material.
 
 ## Autoria
 
