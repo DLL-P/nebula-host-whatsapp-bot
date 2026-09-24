@@ -59,6 +59,9 @@ Fazer os **dois caminhos em paralelo**:
 - Clone deste repositório no servidor: `~/nebula-host-whatsapp-bot` (branch `claude/bold-keller-jm54dk`).
 - Sessões do Claude na nuvem (claude.ai/code) **não** alcançam o servidor nem o navegador. Elas servem para documentação e código, que chegam ao servidor via GitHub.
 
+## E-mail
+- Todo e-mail do projeto usa **a conta Google conectada ao Claude** ou **o Proton Mail da Nebula Host**: cadastros na Meta, contato da verificação da empresa, `ACME_EMAIL` e SMTP do Chatwoot, alertas do monitoramento. Não usar outro provedor.
+
 ## Onde está salvo
 - **GitHub:** este repositório, branch `claude/bold-keller-jm54dk` (versão sem IDs)
 - **Google Drive:** documento "Nebula Host – WhatsApp API – Estado atual" (versão privada, com IDs)

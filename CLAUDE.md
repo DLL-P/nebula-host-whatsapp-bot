@@ -9,5 +9,6 @@ Regras do projeto:
 - Repositório **público**: nunca versionar tokens, IDs de conta (WABA, app, número) nem o `.env`. IDs ficam na cópia privada (Google Drive / HD do servidor).
 - Nunca sugerir remover o app WhatsApp do celular do número principal nem excluir a conta "Aplicativo WhatsApp Business" (incidente do Achado 6.2).
 - Só a API oficial da Meta; nada de bibliotecas não oficiais (ADR-001).
+- E-mail: tudo fica na conta Google conectada ao Claude (Gmail/Drive) ou no Proton Mail da Nebula Host. Contas na Meta, SMTP do Chatwoot, cadastros e alertas usam um desses dois. Não criar nem sugerir outro provedor de e-mail.
 - O usuário prefere passo a passo curto, um de cada vez, em português.
 - Operações de navegador e terminal acontecem no servidor Debian do homelab (usuário `dll`). Sessões na nuvem não alcançam essa máquina.
