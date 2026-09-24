@@ -74,6 +74,7 @@ Detalhada como ADR-002 em [`docs/03-decisoes-tecnicas.md`](docs/03-decisoes-tecn
 | [`06-licoes-aprendidas.md`](docs/06-licoes-aprendidas.md) | Catálogo de obstáculos operacionais reais e suas mitigações |
 | [`07-modelo-de-servico.md`](docs/07-modelo-de-servico.md) | Como essa experiência virou um serviço replicável para terceiros |
 | [`08-habilitacao-e-producao.md`](docs/08-habilitacao-e-producao.md) | Runbook: destravar a Cloud API (Tech Provider, coexistência, número novo), deploy na VPS e go-live |
+| [`09-estado-atual.md`](docs/09-estado-atual.md) | **Onde a implantação parou**, decisões e próximos passos |
 
 ## 🧰 Ferramentas
 
