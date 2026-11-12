@@ -7,7 +7,7 @@
   <img src="https://img.shields.io/badge/canal-WhatsApp%20Cloud%20API-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="whatsapp">
   <img src="https://img.shields.io/badge/IA-Claude%20API-D97757?style=for-the-badge" alt="claude">
   <img src="https://img.shields.io/badge/atendimento-Chatwoot-1F93FF?style=for-the-badge" alt="chatwoot">
-  <img src="https://img.shields.io/badge/licença-CC%20BY-lightgrey?style=for-the-badge" alt="license">
+  <img src="https://img.shields.io/badge/licença-proprietária-lightgrey?style=for-the-badge" alt="licença proprietária">
 </p>
 
 <p align="center"><i>Estudo de caso técnico: como automatizar atendimento via WhatsApp sem quebrar o canal que já está em produção.</i></p>
@@ -95,4 +95,6 @@ Este repositório contém **apenas documentação** — arquitetura, decisões, 
 
 ## Licença
 
-O conteúdo textual e os diagramas deste repositório são disponibilizados para fins de referência técnica e estudo. Reprodução do conteúdo é permitida com atribuição.
+Copyright (c) 2026 R.D.S. Todos os direitos reservados. Veja [LICENSE](LICENSE).
+
+Os textos e diagramas deste repositório podem ser lidos aqui para consulta. Copiar, reproduzir, adaptar ou usar o conteúdo, comercialmente ou não, depende de autorização por escrito.
